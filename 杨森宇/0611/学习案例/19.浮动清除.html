@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clearfix::after{
+            content:'';
+            display: block;
+            clear: both;
+            height: 0;
+            visibility: hidden;
+        }
+        .clearfix2::after,
+        .clearfix2::before{
+            content: '';
+            display: table;
+        }
+        .clearfix2::after{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        
+    </div>
+</body>
+</html>
