@@ -1,0 +1,195 @@
+/* 快速导航 */
+.shortcut{
+    height: 52px;
+    background-color: #333;
+}
+/* 版心 */
+.wrapper{
+    width: 1240px;
+    margin: 0 auto;
+}
+.shortcut .wrapper{
+    height: 52px;
+}
+.shortcut .wrapper ul{
+    float: right;
+}
+.shortcut .wrapper li{
+    float: right;
+    line-height: 52px;
+}
+.shortcut .wrapper a{
+    padding: 0 16px; 
+    font-size: 14px;
+    color: #dcdcdc;
+    border-right:1px solid #666;
+
+}
+.shortcut .wrapper a span{
+    display: inline-block;
+    width: 11px;
+    height: 16px;
+    background-image: url(../images/sprites.png);
+    background-position: -160px -70px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.shortcut .wrapper li:first-child a{
+    border: 0;
+}
+.header{
+    margin: 30px auto;
+    height: 70px;
+}
+.logo{
+    float: left;
+    width: 207px;
+    height: 70px;
+    /* background-color: gold; */
+
+}
+.logo h1{
+    width: 207px;
+    height: 70px;
+}
+.logo h1 a{
+    display: block;
+    width: 207px;
+    height: 70px;
+    background-image: url(../images/logo.png);
+    background-size: contain;
+    font-size: 0;
+}
+.nav{
+    float: left;
+    margin-left: 40px;
+    height: 70px;
+}
+.nav li{
+    float: left;
+    margin-right: 48px;
+    line-height: 70px;
+}
+.nav li a:hover{
+    color: #27ba9b;
+    border-bottom:1px solid #27ba9b;
+}
+.nav li a{
+    padding-bottom: 7px;
+}
+.search{
+    position: relative;
+    float: left;
+    margin-top: 24px;
+    width: 172px;
+    height: 30px;
+    /* background-color: #e7e7e7; */
+    border-bottom:2px solid #e7e7e7;
+    margin-left: 34px;
+}
+.search input{
+    padding-left: 30px;
+    width: 172px;
+    height: 28px;
+}
+.search input ::placeholder{
+    font-size: 14px;
+    color: #ccc;
+}
+.car{ 
+    position: relative;
+    float: left;
+    width: 23px;
+    height: 23px;
+    margin-top: 28px;
+    /* background-color: skyblue; */
+    margin-left: 15px;
+    background-image: url(../images/sprites.png);
+    background-position: -119px -69px;
+    /* vertical-align: middle; */
+}
+.search span{
+    position: absolute;
+    left: 2px;
+    top: 0;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url(../images/sprites.png);
+    background-position:-79px -69px;
+}
+.car span{
+    position: absolute;
+    right:-13px;
+    top: -6px;
+    width: 20px;
+    height: 15px;
+    background-color: red;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+    color: #fff;
+}
+.footer{
+    height: 342px;
+    background-color: #333;
+
+}
+.footer .wrapper{
+    width: 1393px;
+}
+.footer .top{
+height: 175px;
+border-bottom: 3px solid #434343;
+padding-top: 59px;
+padding-left: 135px;
+
+}
+.footer .top li{
+    position: relative;
+    float: left;
+    margin-right: 300px;
+    width: 195px;
+    height: 58px;
+    /* background-color: pink; */
+    line-height: 58px;
+}
+.footer .top li:last-child{
+    margin-right: 0;
+}
+.footer .top li::before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    content:'';
+    width: 58px;
+    height: 58px;
+    background-image: url(../images/sprites.png);
+    vertical-align: middle;
+}
+.footer .top li span{
+    font-size: 28px;
+    color: #fff;
+    margin-left: 77px;
+}
+.footer .top li:nth-child(2)::before{
+    background-position: -64px 0;
+}
+.footer .top li:nth-child(3)::before{
+    background-position: -130px 0;
+}
+.footer .bottom{
+    padding-top: 40px;
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+}
+.footer .bottom a{
+    color: #999;
+    font-size: 14px;
+}
+.footer .bottom p{
+    margin-bottom: 20px;
+}
