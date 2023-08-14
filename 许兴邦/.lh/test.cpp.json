@@ -1,0 +1,26 @@
+{
+    "sourceFile": "test.cpp",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1691420584869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1691420593759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,6 +26,6 @@\n         {\r\n             pd = 8;\r\n             break;\r\n             return pd;\r\n-            h\r\n+            \r\n         }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1691420648129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     int\r\n         count = 0;\r\n     int\r\n         sum = 0;\r\n-    while (i <= N)\r\n+    while (i <= N){\r\n         if (ss(i))\r\n             count++, sum = sum + i;\r\n     ++i;\r\n }\r\n"
+                }
+            ],
+            "date": 1691420584869,
+            "name": "Commit-0",
+            "content": "#include <iostream>\r\nusing namespace std;\r\nint ss(int x);\r\nint main()\r\n{\r\nint M,N;\r\ncin>>M>>N;\r\nint\r\ni=M;\r\nint\r\ncount=0;\r\nint\r\nsum=0;\r\nwhile(i<=N)\r\nif(ss(i))count++,sum=sum+i;\r\n++i;\r\n}\r\ncout<<count<<\"\"<<sum;\r\n}\r\nint ss(int x)\r\n{\r\nint pd=1;\r\nfor(int i=2;i<=x/2;i++)\r\nif(x%i==0){\r\npd=8;\r\nbreak;\r\nreturn pd;\r\nh\r\n}"
+        }
+    ]
+}
