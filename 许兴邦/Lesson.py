@@ -1,13 +1,13 @@
 import requests
 import threading
 import time
+import os
 
-
-def lesson(classid):
+def lesson(classid, cid):
     n = 0
     while (1 > 0):
-        sid = 'D025374553894D51C7503E4684A3425E'
-        url = 'http://jwxt.neuq.edu.cn/eams/stdElectCourse!batchOperator.action?profileId=281'
+        sid = '04368FC68114D2AF65413C6C327EEF86'#'D025374553894D51C7503E4684A3425E'
+        url = 'http://jwxt.neuq.edu.cn/eams/stdElectCourse!batchOperator.action?profileId='+cid
         cookie = 'JSESSIONID=' + sid + ';GSESSIONID=' + sid + ';'
         cookie = 'semester.id=81; JSESSIONID=' + sid + '; SERVERNAME=c1; GSESSIONID=' + sid
         header = {
@@ -21,7 +21,7 @@ def lesson(classid):
             #'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
             #'Origin': 'http://jwxt.neuq.edu.cn',
             'Referer':
-            'http://jwxt.neuq.edu.cn/eams/stdElectCourse!defaultPage.action?electionProfile.id=281',
+            'http://jwxt.neuq.edu.cn/eams/stdElectCourse!defaultPage.action?electionProfile.id='+cid,
             #'Accept-Encoding': 'gzip, deflate',
             #'Accept-Language': 'zh-CN,zh;q=0.9',
             'Cookie': cookie
@@ -38,20 +38,22 @@ def lesson(classid):
         # res = str(mes.content, 'utf-8')
         # print(res)
         f.write(str(mes.content, 'utf-8'))
+        os.startfile(r'res.html')
+
         print(classid+"成功")
         time.sleep(3)
 
 
-thread1 = threading.Thread(target=lesson, args=('58512', ))
+thread1 = threading.Thread(target=lesson, args=('58512', '281',))
 thread1.start()
 time.sleep(0.75)
-thread2 = threading.Thread(target=lesson, args=('58603',))
+thread2 = threading.Thread(target=lesson, args=('58603', '284',))
 thread2.start()
 time.sleep(0.75)
-thread3 = threading.Thread(target=lesson, args=('58832',))
+thread3 = threading.Thread(target=lesson, args=('58832', '285',))
 thread3.start()
 time.sleep(0.75)
-thread4 = threading.Thread(target=lesson, args=('59589',))
+thread4 = threading.Thread(target=lesson, args=('59589', '283',))
 thread4.start()
 
 

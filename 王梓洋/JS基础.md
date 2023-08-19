@@ -168,6 +168,12 @@ Null类型值只有一个，就是null
 var obj=new Object();
 ```
 
+```js
+var obj ={};
+//也可以用对象字面量创建对象，对象字面量的属性名可以加引号也可以不加
+//语法：{属性名：属性值，属性名：属性值，，，}
+```
+
 *注：*
 *用new调用的函数，是构造函数constructor*
 *构造函数是专门用来创建对象的函数*
@@ -237,3 +243,109 @@ console.log("test2" in obj);
    其余都是true
 3. null和undefined都会转换为false
 4. 对象也会转换为true
+
+## 函数
+
+### 创造函数
+
+创造一个函数对象
+
+```js
+var fun = new Function("console.log('Hello 这是我的第一个函数')；")
+```
+
+使用**函数声明**来创建一个函数
+
+```js
+function 函数名([形参1,形参2...形参N]){
+
+}
+```
+
+函数内部可以再声明一个函数
+
+使用**函数表达式**来创建一个函数
+
+```js
+var 函数名=function([形参1,形参2...形参N]){
+    
+}
+```
+
+### 返回值
+
+在函数return后语句都不会执行
+
+如果return后不跟值，或者不写return，都会返回undefined
+
+例：
+
+<a href="https://imgse.com/i/pPum8Cd"><img src="https://s1.ax1x.com/2023/08/12/pPum8Cd.png" alt="pPum8Cd.png" border="0" /></a>
+
+如果该式成立，返回true，该式不成立，返回false
+
+如果 return 10；那么返回值就是10
+
+返回值可以是任意的数据类型，也可以是一个对象
+
+### 实参
+
+当我们的参数过多时，可以将参数封装到一个对象中，然后通过对象传递
+
+```js
+function sayHello(o){
+    console.log("我是"+o.name+"，今年"+o.age+"岁，是一个"+o.gender+"人，我住在"+o.address)
+}
+
+var obj={
+    name:"孙悟空",
+    age:18,
+    gender:"男",
+    address:"花果山",
+}
+
+sayHello(obj);
+```
+
+```js
+function fun(a){
+console.log("a="+a);
+}
+fun(sayHello);
+//把函数当作参数
+```
+
+### 立即执行函数
+
+<a href="https://imgse.com/i/pPunFqf"><img src="https://s1.ax1x.com/2023/08/12/pPunFqf.png" alt="pPunFqf.png" border="0" /></a>
+
+### this
+
+<a href="https://imgse.com/i/pPuMEdK"><img src="https://s1.ax1x.com/2023/08/12/pPuMEdK.png" alt="pPuMEdK.png" border="0" /></a>
+
+### 使用工厂方法创建对象
+
+通过该方法可以**批量**的创建对象
+
+```js
+function createPerson(name ,age ,gender){
+    //创建新的对象
+    var obj=new Object();
+    //向对象中添加属性
+    obj.name =name;
+    obj.gender=gender;
+    obj.sayName=function(){
+        alert(this.name);
+    };
+    //将新的对象返回
+    return obj;
+}
+```
+
+### 构造函数
+
+<a href="https://imgse.com/i/pPu4CLQ"><img src="https://s1.ax1x.com/2023/08/13/pPu4CLQ.png" alt="pPu4CLQ.png" border="0" /></a>
+
+<a href="https://imgse.com/i/pPu4kon"><img src="https://s1.ax1x.com/2023/08/13/pPu4kon.png" alt="pPu4kon.png" border="0" /></a>
+
+<a href="https://imgse.com/i/pPu4VJ0"><img src="https://s1.ax1x.com/2023/08/13/pPu4VJ0.png" alt="pPu4VJ0.png" border="0" /></a>
