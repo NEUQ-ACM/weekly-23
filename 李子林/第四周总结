@@ -1,0 +1,97 @@
+# 第四周总结
+
+#### 学习内容总结
+
+1.学习了JavaScript,为css之前制作的网页添加了交互效果
+
+2.学习了Ajex
+
+#### 刷题
+
+744.寻找比目标字母大的最小字母
+题目：给你一个排序后的字符列表 letters ，列表中只包含小写英文字母。另给出一个目标字母 target，请你寻找在这一有序列表里比目标字母大的最小字母。
+
+在比较时，字母是依序循环出现的。举个例子：
+如果目标字母 target = ‘z’ 并且字符列表为 letters = [‘a’, ‘b’]，则答案返回 ‘a’
+
+示例：
+输入: letters = [“c”,“f”, “j”] target = “a”
+输出: “c”
+
+输入:
+letters = [“c”,“f”, “j”] target = “c”
+输出: “f”
+
+输入:
+letters = [“c”,“f”, “j”] target = “d”
+输出: “f”
+
+```c
+class Solution {
+public:
+    char nextGreatestLetter(vector<char>& letters, char target) {
+        int left = 0;
+        int right = letters.size() - 1;
+        if(target >= letters[right] || target < letters[left]) return letters[left];
+        //left + 1 < right 使得right指针最终指向目标值的右边一个数
+        //即比目标值大的第一个数
+        while(left + 1 < right)
+        {
+            int mid = (left + right) / 2;
+            if(letters[mid] > target) right = mid;
+            else left = mid;
+        }
+        return letters[right];
+    }
+};
+```
+
+寻找旋转排序数组中的最小值
+题目：假设按照升序排序的数组在预先未知的某个点上进行了旋转。
+
+( 例如，数组
+[0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。
+
+请找出其中最小的元素。
+
+你可以假设数组中不存在重复元素。
+
+示例 1:
+输入:[3,4,5,1,2]
+输出:1
+
+示例 2:
+输入:[4,5,6,7,0,1,2]
+输出: 0
+
+```c
+class Solution {
+public:
+    int findMin(vector<int>& nums) {
+        int left = 0;
+        /* 左闭右闭区间，如果用右开区间则不方便判断右值 */ 
+        int right = nums.size() - 1;
+        /* 循环不变式，如果left == right，则循环结束 */
+        while (left < right) {      
+            int mid = left + (right - left) / 2;/* 地板除，mid更靠近left */
+            /* 中值 > 右值，最小值在右半边，收缩左边界 */ 
+            if (nums[mid] > nums[right]) {  
+        /* 因为中值 > 右值，中值肯定不是最小值，左边界可以跨过mid */       
+                left = mid + 1;                     
+            } 
+            /* 明确中值 < 右值，最小值在左半边，收缩右边界 */ 
+            else if (nums[mid] < nums[right]) {
+            /* 因为中值 < 右值，中值也可能是最小值，右边界只能取到mid处 */    
+                right = mid;                        
+            }
+        }
+        /* 循环结束，left == right，最小值输出nums[left]或nums[right]均可 */
+        return nums[left];    
+    }
+};
+
+
+```
+
+
+
