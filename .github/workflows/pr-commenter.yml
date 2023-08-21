@@ -1,0 +1,15 @@
+name: "PR Commenter"
+
+on:
+  pull_request_target:
+
+jobs:
+  pr-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: comment
+        uses: NejcZdovc/comment-pr@v2
+        with:
+          message: "@shinyina 有劳cr~"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
