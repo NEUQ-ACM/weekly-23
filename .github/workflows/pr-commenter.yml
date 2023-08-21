@@ -10,6 +10,6 @@ jobs:
       - name: comment
         uses: NejcZdovc/comment-pr@v2
         with:
-          message: "@shinyina 有劳cr~"
+          message: "@dyx1234 @Zac-saodiseng 有劳cr~"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
