@@ -1,0 +1,93 @@
+# http接口管理平台
+
+Admin文件
+
+```js
+//引入模块
+const express= require('express');
+//创建了一个路由容器
+const router=express.Router();
+//将Model.js文件引入到Admin.js中
+const userModel=require('./Model');
+// 引入更改数据文件
+const UserService = require("./UserService");
+ 
+// 增
+    router.post('/postUser', (req, res) => {
+    let {apiName ,apiUrl ,apiMethod ,apiParameter ,apiTime} = req.body;
+    userModel.insertMany({ apiName : apiName , apiUrl : apiUrl , apiMethod : apiMethod , apiParameter : apiParameter , apiTime : apiTime})
+    .then((data) => {
+        res.send({ err: 0, msg: 'add ok', data: null })
+    })
+    .catch((err) => {
+        res.send({ err: -1, msg: err._message, data: null })
+    })
+})
+
+// 删
+    router.delete('/delUser',(req,res)=>{
+    var _id = req.body._id;
+    userModel.remove({_id:_id})
+    .then((data) => {
+        res.send({ err: 0, msg: 'del ok', data: null })
+    })
+    .catch((err) => {
+        res.send({ err: -1, msg: err._message, data: null })
+    })
+})
+
+// 改
+    router.put('/putUser', (req, res) => {
+    let _id = req.body._id;
+    let {apiName ,apiUrl ,apiMethod ,apiParameter , apiTime} = req.body;
+    userModel.updateOne({ _id: _id }, { apiName : apiName , apiUrl : apiUrl , apiMethod : apiMethod , apiParameter : apiParameter , apiTime : apiTime})
+    .then((data) => {
+        res.send({ err: 0, msg: 'updata ok', data: null })
+    })
+    .catch((err) => {
+        res.send({ err: -1, msg: err._message, data: null })
+    })
+})
+
+// 查
+    router.get('/getUser', (req, res) => {
+    userModel.find()
+    .then((data) => {
+        res.send({ err: 0, msg: 'get ok', data: data })
+    })
+    .catch((err) => {
+        res.send({ err: -1, msg: err._message, data: null })
+    })
+})
+
+//将数据的增删改查接口抛出
+module.exports=router;
+```
+
+Model.js文件
+
+```js
+//数据模型
+const mongoose=require('mongoose');
+let UserSchema = new mongoose.Schema({
+    //接口名称
+    apiName:{type: String, require: true},
+    //访问地址
+    apiUrl:{type:String, require: true},
+    //请求方法
+    apiMethod:{type:String, require: true},
+    //请求参数
+    apiParameter:{type:String, require: true},
+    //创建时间
+    apiTime:{type:String, require: true}
+});
+//将schema转化为数据模型
+let user = mongoose.model('Admin',UserInterface);
+module.exports = user;
+```
+
+1. 首先创建一个Admin.js文件,引入模块，并实例化
+2. 重新创建一个Model.js文件,创建一个数据模型,规定参数，将构造好的模块抛出
+3. 将Model.js文件引入到Admin.js
+4. 开始写接口
+5. 将数据的增删改查接口抛出
