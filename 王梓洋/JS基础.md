@@ -348,4 +348,90 @@ function createPerson(name ,age ,gender){
 
 <a href="https://imgse.com/i/pPu4kon"><img src="https://s1.ax1x.com/2023/08/13/pPu4kon.png" alt="pPu4kon.png" border="0" /></a>
 
-<a href="https://imgse.com/i/pPu4VJ0"><img src="https://s1.ax1x.com/2023/08/13/pPu4VJ0.png" alt="pPu4VJ0.png" border="0" /></a>
+<a href="https://imgse.com/i/pPu4VJ0"><img src="https://s1.ax1x.com/2023/08/13/pPu4VJ0.png" alt="pPu4VJ0.png" border="0" />
+
+</a>
+
+## 正则表达式
+
+<a href="https://imgse.com/i/pPQYr1x"><img src="https://s1.ax1x.com/2023/08/15/pPQYr1x.png" alt="pPQYr1x.png" border="0" /></a>
+
+<a href="https://imgse.com/i/pPQYu7Q"><img src="https://s1.ax1x.com/2023/08/15/pPQYu7Q.png" alt="pPQYu7Q.png" border="0" /></a>
+
+用字面量创建正则表达式：
+
+<a href="https://imgse.com/i/pPQYgBD"><img src="https://s1.ax1x.com/2023/08/15/pPQYgBD.png" alt="pPQYgBD.png" border="0" /></a>
+
+注：
+
+1. [ ]里也是或的关系，[ab]==a|b
+2. [a-z] 任意小写字母
+3. [A-Z] 任意大写字母
+4. [A-z] 任意字母
+5. a[bde]c == abc|adc|aec
+6. [^ab]  包含除了ab的字母
+7. [0-9] 任意数字
+8. [^0-9] 除了数字
+
+字符串与正则表达式：
+
+拆分：
+
+<a href="https://imgse.com/i/pPQtc2q"><img src="https://s1.ax1x.com/2023/08/15/pPQtc2q.png" alt="pPQtc2q.png" border="0" /></a>
+
+搜索：
+
+<a href="https://imgse.com/i/pPQtTi9"><img src="https://s1.ax1x.com/2023/08/15/pPQtTi9.png" alt="pPQtTi9.png" border="0" /></a>
+
+重复：
+
+<a href="https://imgse.com/i/pPQabzn"><img src="https://s1.ax1x.com/2023/08/15/pPQabzn.png" alt="pPQabzn.png" border="0" /></a>
+
+检查：
+
+<a href="https://imgse.com/i/pPQaxdU"><img src="https://s1.ax1x.com/2023/08/15/pPQaxdU.png" alt="pPQaxdU.png" border="0" /></a>
+
+注：
+
+```js
+reg = /^aa$/
+//字符串必须包含aa
+```
+
+<a href="https://imgse.com/i/pPQd1yt"><img src="https://s1.ax1x.com/2023/08/15/pPQd1yt.png" alt="pPQd1yt.png" border="0" /></a>
+
+<a href="https://imgse.com/i/pPQ0QqP"><img src="https://s1.ax1x.com/2023/08/15/pPQ0QqP.png" alt="pPQ0QqP.png" border="0" /></a>
+
+用户名去除空格：
+
+<a href="https://imgse.com/i/pPQ0nxA"><img src="https://s1.ax1x.com/2023/08/15/pPQ0nxA.png" alt="pPQ0nxA.png" border="0" /></a>
+
+<a href="https://imgse.com/i/pPQ0CK1"><img src="https://s1.ax1x.com/2023/08/15/pPQ0CK1.png" alt="pPQ0CK1.png" border="0" /></a>
+
+手机号的正则表达式：
+
+<a href="https://imgse.com/i/pPQdksx"><img src="https://s1.ax1x.com/2023/08/15/pPQdksx.png" alt="pPQdksx.png" border="0" /></a>
+
+```js
+var phoneReg = /1[3-9][0-9]{9}$/ ;
+```
+
+
+
+电子邮件的正则表达式：
+
+
+
+## 宿主对象（DOM和BOM）
+
+### DOM（文档对象模型）
+
+<a href="https://imgse.com/i/pPQA4ED"><img src="https://s1.ax1x.com/2023/08/15/pPQA4ED.png" alt="pPQA4ED.png" border="0" /></a>
+
+<a href="https://imgse.com/i/pPQVmef"><img src="https://s1.ax1x.com/2023/08/15/pPQVmef.png" alt="pPQVmef.png" border="0" /></a>
+
+<a href="https://imgse.com/i/pPQVNwT"><img src="https://s1.ax1x.com/2023/08/15/pPQVNwT.png" alt="pPQVNwT.png" border="0" /></a>
+
+<a href="https://imgse.com/i/pPQ0wq0"><img src="https://s1.ax1x.com/2023/08/15/pPQ0wq0.png" alt="pPQ0wq0.png" border="0" /></a>
+
+<a href="https://imgse.com/i/pPQ0DaT"><img src="https://s1.ax1x.com/2023/08/15/pPQ0DaT.png" alt="pPQ0DaT.png" border="0" /></a>
